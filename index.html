@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha P3 — Protección Poblaciones Vulnerables | OSCC Barranquilla</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:      #0a0f1e;
+  --navy:      #0d1635;
+  --card:      #111827;
+  --card2:     #131c32;
+  --rosa:      #ec4899;
+  --rosa-l:    #f9a8d4;
+  --rosa-bg:   rgba(236,72,153,0.08);
+  --rosa-brd:  rgba(236,72,153,0.25);
+  --violeta:   #8b5cf6;
+  --viol-l:    #c4b5fd;
+  --viol-bg:   rgba(139,92,246,0.08);
+  --viol-brd:  rgba(139,92,246,0.25);
+  --lila:      #a855f7;
+  --lila-l:    #d8b4fe;
+  --teal:      #14b8a6;
+  --teal-bg:   rgba(20,184,166,0.08);
+  --amber:     #f59e0b;
+  --amber-bg:  rgba(245,158,11,0.08);
+  --amber-brd: rgba(245,158,11,0.25);
+  --verde:     #10b981;
+  --verde-bg:  rgba(16,185,129,0.08);
+  --verde-brd: rgba(16,185,129,0.25);
+  --rojo:      #ef4444;
+  --rojo-bg:   rgba(239,68,68,0.08);
+  --rojo-brd:  rgba(239,68,68,0.25);
+  --border:    rgba(255,255,255,0.08);
+  --border2:   rgba(255,255,255,0.05);
+  --ink:       rgba(255,255,255,0.85);
+  --ink2:      rgba(255,255,255,0.60);
+  --ink3:      rgba(255,255,255,0.38);
+  --white:     #ffffff;
+  --r:         10px;
+  --r2:        16px;
+  --shadow:    0 4px 24px rgba(0,0,0,0.35);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65;}
+
+/* ═══ STRIPE + TOPBAR ═══ */
+.stripe{height:3px;background:linear-gradient(90deg,var(--rosa),var(--violeta),var(--lila),var(--rosa));animation:stripe-flow 4s linear infinite;}
+@keyframes stripe-flow{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+.topbar{background:rgba(13,22,53,0.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100;}
+.tb-left{display:flex;align-items:center;gap:12px;}
+.tb-logo{width:36px;height:36px;border-radius:8px;background:var(--rosa-bg);border:1px solid var(--rosa-brd);display:flex;align-items:center;justify-content:center;font-size:1.2em;}
+.tb-name{font-family:'Syne',sans-serif;font-size:.85em;font-weight:700;color:var(--white);line-height:1.2;}
+.tb-name span{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:.85em;color:var(--ink3);}
+.tb-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.tb-badge{padding:4px 11px;border-radius:20px;font-size:.7em;font-weight:700;letter-spacing:.05em;background:var(--rosa-bg);border:1px solid var(--rosa-brd);color:var(--rosa-l);}
+.tb-badge.v{background:var(--viol-bg);border-color:var(--viol-brd);color:var(--viol-l);}
+
+/* ═══ HERO ═══ */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,#170d2e 60%,#0f0a22 100%);padding:52px 28px 72px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:28px;background:var(--deep);border-radius:28px 28px 0 0;}
+.hero-glow{position:absolute;top:-100px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,.12) 0%,transparent 65%);pointer-events:none;}
+.hero-glow2{position:absolute;bottom:-80px;left:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+.htag{padding:4px 13px;border-radius:20px;font-size:.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.htag-p3{background:var(--rosa-bg);border:1px solid var(--rosa-brd);color:var(--rosa-l);}
+.htag-v{background:var(--viol-bg);border:1px solid var(--viol-brd);color:var(--viol-l);}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8em,4vw,2.8em);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:14px;}
+.hero h1 em{color:var(--rosa-l);font-style:normal;}
+.hero h1 em.v{color:var(--viol-l);}
+.hero-desc{color:var(--ink2);font-size:.93em;max-width:680px;line-height:1.75;margin-bottom:28px;}
+.hero-chips{display:flex;gap:12px;flex-wrap:wrap;}
+.hchip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 16px;color:var(--ink);font-size:.82em;}
+.hchip strong{font-weight:700;color:var(--rosa-l);}
+
+/* ═══ WRAPPER ═══ */
+.wrapper{max-width:820px;margin:0 auto;padding:32px 24px 72px;}
+
+/* ═══ PROGRESS ═══ */
+.progress-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;margin-bottom:28px;}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.prog-label{font-family:'Syne',sans-serif;font-size:.75em;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);}
+.prog-pct{font-family:'Syne',sans-serif;font-size:.85em;font-weight:800;color:var(--rosa);}
+.prog-track{height:5px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--rosa),var(--violeta));border-radius:3px;transition:width .4s ease;width:0%;}
+.prog-steps{display:flex;gap:5px;margin-top:12px;flex-wrap:wrap;}
+.ps{flex:1;min-width:72px;padding:5px 8px;border-radius:6px;font-size:.68em;font-weight:600;text-align:center;cursor:pointer;background:rgba(255,255,255,.05);color:var(--ink3);border:1px solid transparent;transition:all .2s;}
+.ps.active{background:var(--rosa-bg);color:var(--rosa-l);border-color:var(--rosa-brd);}
+.ps.done{background:var(--verde-bg);color:var(--verde);border-color:var(--verde-brd);}
+
+/* ═══ SECTION ═══ */
+.section{display:none;animation:fadeSlide .3s ease;}
+.section.visible{display:block;}
+@keyframes fadeSlide{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ═══ CARD ═══ */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-bottom:20px;box-shadow:var(--shadow);}
+.card-hdr{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--border2);}
+.card-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4em;flex-shrink:0;}
+.ico-rosa   {background:var(--rosa-bg);border:1px solid var(--rosa-brd);}
+.ico-viol   {background:var(--viol-bg);border:1px solid var(--viol-brd);}
+.ico-teal   {background:var(--teal-bg);border:1px solid rgba(20,184,166,.25);}
+.ico-amber  {background:var(--amber-bg);border:1px solid var(--amber-brd);}
+.ico-verde  {background:var(--verde-bg);border:1px solid var(--verde-brd);}
+.ico-rojo   {background:var(--rojo-bg);border:1px solid var(--rojo-brd);}
+.card-sec-label{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);margin-bottom:3px;}
+.card-title{font-family:'Syne',sans-serif;font-size:1.05em;font-weight:700;color:var(--white);}
+
+/* ═══ FORM ELEMENTS ═══ */
+.field{margin-bottom:18px;}
+label{display:block;font-size:.85em;font-weight:600;color:var(--ink2);margin-bottom:6px;}
+label .req{color:var(--rosa);margin-left:3px;}
+label .hint{font-weight:400;color:var(--ink3);font-size:.9em;margin-left:4px;}
+
+input[type="text"],input[type="number"],input[type="date"],input[type="time"],textarea,select{
+  width:100%;padding:10px 14px;border:1.5px solid rgba(255,255,255,.12);border-radius:var(--r);
+  background:rgba(255,255,255,.04);color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9em;
+  transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none;
+}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--rosa);box-shadow:0 0 0 3px rgba(236,72,153,.15);background:rgba(255,255,255,.06);}
+input.error,textarea.error,select.error{border-color:var(--rojo);box-shadow:0 0 0 3px rgba(239,68,68,.15);}
+textarea{resize:vertical;min-height:90px;}
+select option{background:var(--card);color:var(--white);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:38px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.field-row{grid-template-columns:1fr;}.card{padding:22px 18px;}.wrapper{padding:20px 16px 60px;}}
+
+.sub-hdr{font-family:'Syne',sans-serif;font-size:.76em;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin:22px 0 14px;display:flex;align-items:center;gap:8px;}
+.sub-hdr::after{content:'';flex:1;height:1px;background:var(--border2);}
+.field-sep{border:none;border-top:1px solid var(--border2);margin:20px 0;}
+
+/* ═══ OPTION GROUPS ═══ */
+.opts{display:flex;flex-direction:column;gap:7px;}
+.opts.horizontal{flex-direction:row;flex-wrap:wrap;gap:7px;}
+.opt-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);cursor:pointer;transition:all .18s;background:rgba(255,255,255,.03);font-size:.88em;color:var(--ink2);}
+.opt-item:hover{border-color:var(--rosa);background:var(--rosa-bg);}
+.opt-item input[type="radio"],.opt-item input[type="checkbox"]{accent-color:var(--rosa);cursor:pointer;width:auto;height:auto;padding:0;border:none;background:none;box-shadow:none;}
+.opt-item.selected{border-color:var(--rosa);background:var(--rosa-bg);color:var(--rosa-l);font-weight:600;}
+
+/* Nivel urgencia */
+.nivel-opts{display:flex;gap:10px;flex-wrap:wrap;}
+.nivel-opt{flex:1;min-width:90px;padding:13px 10px;border-radius:10px;border:2px solid;text-align:center;cursor:pointer;font-size:.8em;font-weight:700;transition:all .2s;}
+.nivel-opt input{display:none;}
+.nivel-opt.alto  {border-color:rgba(239,68,68,.4);color:var(--rojo);background:var(--rojo-bg);}
+.nivel-opt.medio {border-color:rgba(245,158,11,.4);color:var(--amber);background:var(--amber-bg);}
+.nivel-opt.bajo  {border-color:rgba(16,185,129,.4);color:var(--verde);background:var(--verde-bg);}
+.nivel-opt.alto.sel  {background:var(--rojo);color:#fff;border-color:var(--rojo);}
+.nivel-opt.medio.sel {background:var(--amber);color:#fff;border-color:var(--amber);}
+.nivel-opt.bajo.sel  {background:var(--verde);color:#fff;border-color:var(--verde);}
+
+/* Chips (tags seleccionables) */
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px;}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:20px;font-size:.78em;font-weight:600;cursor:pointer;border:1.5px solid;transition:all .18s;user-select:none;}
+.chip input{display:none;}
+.c-rosa  {border-color:var(--rosa-brd);color:var(--rosa-l);background:var(--rosa-bg);}
+.c-viol  {border-color:var(--viol-brd);color:var(--viol-l);background:var(--viol-bg);}
+.c-teal  {border-color:rgba(20,184,166,.3);color:#5eead4;background:var(--teal-bg);}
+.c-amber {border-color:var(--amber-brd);color:var(--amber);background:var(--amber-bg);}
+.c-verde {border-color:var(--verde-brd);color:var(--verde);background:var(--verde-bg);}
+.c-rojo  {border-color:var(--rojo-brd);color:var(--rojo);background:var(--rojo-bg);}
+.chip.sel.c-rosa  {background:var(--rosa);color:#fff;border-color:var(--rosa);}
+.chip.sel.c-viol  {background:var(--violeta);color:#fff;border-color:var(--violeta);}
+.chip.sel.c-teal  {background:var(--teal);color:#fff;border-color:var(--teal);}
+.chip.sel.c-amber {background:var(--amber);color:#000;border-color:var(--amber);}
+.chip.sel.c-verde {background:var(--verde);color:#fff;border-color:var(--verde);}
+.chip.sel.c-rojo  {background:var(--rojo);color:#fff;border-color:var(--rojo);}
+
+/* Info boxes */
+.info-box{border-radius:var(--r);padding:14px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;font-size:.88em;line-height:1.6;}
+.info-box.rosa  {background:var(--rosa-bg);border:1px solid var(--rosa-brd);color:var(--rosa-l);}
+.info-box.viol  {background:var(--viol-bg);border:1px solid var(--viol-brd);color:var(--viol-l);}
+.info-box.verde {background:var(--verde-bg);border:1px solid var(--verde-brd);color:var(--verde);}
+.info-box.amber {background:var(--amber-bg);border:1px solid var(--amber-brd);color:var(--amber);}
+.info-box.rojo  {background:var(--rojo-bg);border:1px solid var(--rojo-brd);color:var(--rojo);}
+.info-box .ico{font-size:1.2em;flex-shrink:0;margin-top:1px;}
+.info-box p strong{color:inherit;}
+
+/* Population selector cards */
+.pop-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:6px;}
+@media(max-width:500px){.pop-grid{grid-template-columns:1fr;}}
+.pop-sel{padding:16px 18px;border-radius:var(--r2);border:2px solid;cursor:pointer;transition:all .2s;position:relative;}
+.pop-sel input{display:none;}
+.pop-sel-ico{font-size:1.6em;margin-bottom:8px;display:block;}
+.pop-sel-name{font-family:'Syne',sans-serif;font-size:.9em;font-weight:700;margin-bottom:3px;}
+.pop-sel-desc{font-size:.78em;color:var(--ink3);line-height:1.5;}
+.ps-mujeres{border-color:var(--rosa-brd);background:var(--rosa-bg);}
+.ps-mujeres .pop-sel-name{color:var(--rosa-l);}
+.ps-nnaj   {border-color:var(--amber-brd);background:var(--amber-bg);}
+.ps-nnaj .pop-sel-name{color:var(--amber);}
+.ps-vdg    {border-color:var(--viol-brd);background:var(--viol-bg);}
+.ps-vdg .pop-sel-name{color:var(--viol-l);}
+.ps-vif    {border-color:var(--verde-brd);background:var(--verde-bg);}
+.ps-vif .pop-sel-name{color:var(--verde);}
+.ps-lgbtiq {border-color:rgba(139,92,246,.3);background:linear-gradient(135deg,var(--amber-bg),var(--viol-bg));}
+.ps-lgbtiq .pop-sel-name{color:var(--lila-l);}
+.pop-sel.sel{transform:scale(1.02);}
+.pop-sel.sel.ps-mujeres{border-color:var(--rosa);box-shadow:0 0 0 3px rgba(236,72,153,.15);}
+.pop-sel.sel.ps-nnaj   {border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.15);}
+.pop-sel.sel.ps-vdg    {border-color:var(--violeta);box-shadow:0 0 0 3px rgba(139,92,246,.15);}
+.pop-sel.sel.ps-vif    {border-color:var(--verde);box-shadow:0 0 0 3px rgba(16,185,129,.15);}
+.pop-sel.sel.ps-lgbtiq {border-color:var(--lila);box-shadow:0 0 0 3px rgba(168,85,247,.15);}
+.check-mark{position:absolute;top:10px;right:12px;width:22px;height:22px;border-radius:50%;background:var(--rosa);display:none;align-items:center;justify-content:center;color:#fff;font-size:.8em;}
+.pop-sel.sel .check-mark{display:flex;}
+
+/* Char counter */
+.char-counter{text-align:right;font-size:.73em;color:var(--ink3);margin-top:3px;}
+.char-counter.warn{color:var(--amber);}
+.char-counter.over{color:var(--rojo);}
+
+/* Validation */
+.val-msg{font-size:.78em;color:var(--rojo);margin-top:4px;display:none;}
+.val-msg.visible{display:block;}
+
+/* Photos */
+.photo-zone{border:2px dashed rgba(255,255,255,.15);border-radius:12px;padding:28px;text-align:center;background:rgba(255,255,255,.02);cursor:pointer;transition:all .2s;}
+.photo-zone:hover{border-color:var(--rosa);background:var(--rosa-bg);}
+.photo-zone-ico{font-size:2em;margin-bottom:8px;}
+.photo-zone p{font-size:.85em;color:var(--ink3);}
+.photo-preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.photo-thumb{width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid var(--rosa-brd);}
+
+/* GPS row */
+.gps-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:8px;}
+@media(max-width:480px){.gps-row{grid-template-columns:1fr;}}
+.btn-gps{padding:10px 18px;background:var(--rosa-bg);border:1px solid var(--rosa-brd);border-radius:var(--r);color:var(--rosa-l);font-family:'DM Sans',sans-serif;font-size:.85em;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.btn-gps:hover{background:rgba(236,72,153,.2);}
+.gps-status{font-size:.8em;margin-top:4px;}
+.gps-status.ok{color:var(--verde);}
+.gps-status.err{color:var(--rojo);}
+
+/* Nav buttons */
+.nav-btns{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding-top:20px;border-top:1px solid var(--border2);}
+.btn{padding:11px 24px;border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:600;cursor:pointer;border:none;transition:all .2s;display:flex;align-items:center;gap:7px;}
+.btn-prev{background:rgba(255,255,255,.06);color:var(--ink2);border:1.5px solid rgba(255,255,255,.12);}
+.btn-prev:hover{background:rgba(255,255,255,.1);}
+.btn-next{background:var(--rosa);color:#fff;box-shadow:0 4px 16px rgba(236,72,153,.35);}
+.btn-next:hover{background:#db2777;transform:translateY(-1px);}
+.btn-submit{background:linear-gradient(135deg,var(--rosa),var(--violeta));color:#fff;box-shadow:0 4px 16px rgba(139,92,246,.35);padding:13px 28px;font-size:.95em;}
+.btn-submit:hover{opacity:.9;transform:translateY(-1px);}
+.btn-draft{background:transparent;color:var(--ink3);border:1.5px solid rgba(255,255,255,.1);font-size:.82em;padding:8px 16px;}
+.btn-draft:hover{color:var(--rosa-l);border-color:var(--rosa-brd);}
+
+/* Success */
+.success-screen{display:none;text-align:center;padding:52px 28px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);box-shadow:var(--shadow);}
+.success-screen.visible{display:block;}
+.success-ico{font-size:3.5em;margin-bottom:16px;}
+.success-screen h2{font-family:'Syne',sans-serif;font-size:1.7em;font-weight:800;color:var(--rosa-l);margin-bottom:10px;}
+.success-screen p{color:var(--ink2);font-size:.92em;max-width:440px;margin:0 auto 20px;line-height:1.7;}
+.success-code{display:inline-block;padding:8px 20px;background:var(--rosa-bg);border:1px solid var(--rosa-brd);border-radius:8px;font-family:'Syne',sans-serif;font-size:1.1em;font-weight:800;color:var(--rosa-l);margin-bottom:24px;letter-spacing:.06em;}
+.btn-new-form{padding:11px 24px;background:var(--rosa);color:#fff;border:none;border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:600;cursor:pointer;transition:all .2s;margin-right:10px;}
+.btn-print{padding:11px 24px;background:rgba(255,255,255,.06);color:var(--ink2);border:1.5px solid rgba(255,255,255,.12);border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:600;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-left">
+    <div class="tb-logo">🛡️</div>
+    <div class="tb-name">OSCC — Barranquilla
+      <span>Oficina de Seguridad y Convivencia Ciudadana</span>
+    </div>
+  </div>
+  <div class="tb-badges">
+    <span class="tb-badge">P3 — Protección Poblaciones Vulnerables</span>
+    <span class="tb-badge v">CONVIVE 360°</span>
+    <span class="tb-badge">2026</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-tags">
+      <span class="htag htag-p3">Programa P3</span>
+      <span class="htag htag-v">Levantamiento Territorial</span>
+    </div>
+    <h1>Ficha de <em>Protección</em> a<br>Poblaciones <em class="v">Vulnerables</em></h1>
+    <p class="hero-desc">Instrumento oficial para la identificación territorial de problemáticas que afectan a Mujeres, NNAJ, víctimas de Violencia Basada en Género (VBG) y Violencia Intrafamiliar (VIF) en las cinco localidades de Barranquilla. La información registrada orienta las acciones de prevención y protección articuladas interinstitucionalmente.</p>
+    <div class="hero-chips">
+      <div class="hchip">🛡️ <strong>5 Poblaciones</strong> &nbsp;priorizadas</div>
+      <div class="hchip">📋 <strong>6 Secciones</strong> &nbsp;de levantamiento</div>
+      <div class="hchip">⏱ <strong>20–25 min</strong> &nbsp;en campo / sesión comunitaria</div>
+      <div class="hchip">🔒 <strong>Información</strong> &nbsp;confidencial</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="wrapper">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="prog-top">
+      <span class="prog-label">Progreso de la ficha</span>
+      <span class="prog-pct" id="pct">0%</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="prog-steps">
+      <div class="ps active" onclick="goTo(0)">1. Identificación</div>
+      <div class="ps" onclick="goTo(1)">2. Población</div>
+      <div class="ps" onclick="goTo(2)">3. Problemáticas</div>
+      <div class="ps" onclick="goTo(3)">4. Redes y Servicios</div>
+      <div class="ps" onclick="goTo(4)">5. Voces y Alertas</div>
+      <div class="ps" onclick="goTo(5)">6. Cierre y Envío</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 1 — IDENTIFICACIÓN
+  ══════════════════════════════ -->
+  <div class="section visible" id="sec-0">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-rosa">📋</div>
+        <div>
+          <div class="card-sec-label">Sección 1 de 6</div>
+          <div class="card-title">Identificación del Levantamiento</div>
+        </div>
+      </div>
+
+      <div class="info-box rosa">
+        <span class="ico">🛡️</span>
+        <p><strong>Instrucción:</strong> Esta sección identifica quién realiza el levantamiento, cuándo y dónde. Todos los campos con <span style="color:var(--rojo)">*</span> son obligatorios. El código de ficha se genera automáticamente al seleccionar localidad y fecha.</p>
+      </div>
+
+      <div class="field">
+        <label>Código de ficha <span class="hint">(se genera automáticamente)</span></label>
+        <input type="text" id="codigo" readonly placeholder="Se generará al completar localidad y fecha" style="background:rgba(255,255,255,.03);color:var(--ink3);">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Fecha del levantamiento <span class="req">*</span></label>
+          <input type="date" id="fecha" required>
+          <div class="val-msg" id="val-fecha">Ingrese la fecha del levantamiento.</div>
+        </div>
+        <div class="field">
+          <label>Hora de inicio <span class="req">*</span></label>
+          <input type="time" id="hora-inicio" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Localidad <span class="req">*</span></label>
+        <select id="localidad" required onchange="generarCodigo()">
+          <option value="">— Seleccione la localidad —</option>
+          <option value="MET">Metropolitana</option>
+          <option value="NCH">Norte-Centro Histórico</option>
+          <option value="RIO">Riomar</option>
+          <option value="SOC">Suroccidente</option>
+          <option value="SOR">Suroriente</option>
+        </select>
+        <div class="val-msg" id="val-localidad">Seleccione la localidad.</div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Barrio / Sector específico <span class="req">*</span></label>
+          <input type="text" id="barrio" placeholder="Nombre del barrio o sector" required>
+          <div class="val-msg" id="val-barrio">Ingrese el barrio o sector.</div>
+        </div>
+        <div class="field">
+          <label>Tipo de levantamiento <span class="req">*</span></label>
+          <select id="tipo-levantamiento" required>
+            <option value="">— Seleccione —</option>
+            <option>Recorrido de campo</option>
+            <option>Sesión participativa comunitaria</option>
+            <option>Taller de identificación con líderes</option>
+            <option>Entrevista institucional</option>
+            <option>Mesa de coordinación interinstitucional</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="sub-hdr">📍 Coordenadas GPS</div>
+      <div class="info-box amber">
+        <span class="ico">📍</span>
+        <p>Capture las coordenadas GPS desde el punto donde se realiza la sesión o el inicio del recorrido. Si no hay señal, ingrese las coordenadas manualmente desde Google Maps.</p>
+      </div>
+      <div class="gps-row">
+        <div class="field"><label>Latitud</label><input type="text" id="lat" placeholder="Ej: 10.9685" readonly></div>
+        <div class="field"><label>Longitud</label><input type="text" id="lng" placeholder="Ej: -74.7813" readonly></div>
+        <button class="btn-gps" id="btn-gps" onclick="capturarGPS()">📡 Capturar GPS</button>
+      </div>
+      <div class="gps-status" id="gps-status"></div>
+
+      <div class="sub-hdr">👤 Responsable del Levantamiento</div>
+      <div class="field-row">
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" id="resp-nombre" placeholder="Nombre y apellidos" required>
+          <div class="val-msg" id="val-resp">Ingrese el nombre del responsable.</div>
+        </div>
+        <div class="field">
+          <label>Cargo <span class="req">*</span></label>
+          <select id="resp-cargo" required>
+            <option value="">— Seleccione —</option>
+            <option>Gestor de Convivencia — OSCC</option>
+            <option>Funcionaria Secretaría de la Mujer</option>
+            <option>Funcionario/a Comisaría de Familia</option>
+            <option>Funcionario/a ICBF</option>
+            <option>Enlace Alcaldía Local</option>
+            <option>Funcionario/a Defensoría del Pueblo</option>
+            <option>Funcionario/a Secretaría de Salud</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Entidad</label><input type="text" id="resp-entidad" placeholder="Nombre de la entidad"></div>
+        <div class="field"><label>Teléfono / Contacto</label><input type="text" id="resp-tel" placeholder="Número de contacto"></div>
+      </div>
+      <div class="field">
+        <label>Otras personas que participan <span class="hint">(separar con coma)</span></label>
+        <input type="text" id="acompanantes" placeholder="Ej: Sandra Ramos (Organización de Mujeres Tierra Fértil), Carlos Pérez (JAC Barrio Soledad)">
+      </div>
+      <div class="field">
+        <label>Número de personas participantes en la sesión <span class="hint">(si aplica)</span></label>
+        <input type="number" id="num-participantes" min="1" max="500" placeholder="Ej: 18" style="max-width:160px;">
+      </div>
+
+      <div class="nav-btns">
+        <span></span>
+        <button class="btn btn-next" onclick="siguiente(0)">Siguiente — Población Identificada →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 2 — POBLACIÓN Y ENFOQUE
+  ══════════════════════════════ -->
+  <div class="section" id="sec-1">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-rosa">👥</div>
+        <div>
+          <div class="card-sec-label">Sección 2 de 6</div>
+          <div class="card-title">Población Priorizada e Identificación Diferencial</div>
+        </div>
+      </div>
+
+      <div class="info-box viol">
+        <span class="ico">♀️</span>
+        <p>Seleccione las poblaciones presentes o afectadas en el territorio del levantamiento. Puede seleccionar varias. La selección activará preguntas específicas en la siguiente sección.</p>
+      </div>
+
+      <div class="field">
+        <label>Poblaciones identificadas en este territorio <span class="req">*</span> <span class="hint">(seleccione todas las que apliquen)</span></label>
+        <div class="pop-grid">
+          <div class="pop-sel ps-mujeres" onclick="togglePop(this,'pop-mujeres')">
+            <input type="checkbox" id="pop-mujeres">
+            <span class="check-mark">✓</span>
+            <span class="pop-sel-ico">👩</span>
+            <div class="pop-sel-name">Mujeres</div>
+            <div class="pop-sel-desc">Mujeres en condición de vulnerabilidad, riesgo de violencia de género o situación de dependencia</div>
+          </div>
+          <div class="pop-sel ps-nnaj" onclick="togglePop(this,'pop-nnaj')">
+            <input type="checkbox" id="pop-nnaj">
+            <span class="check-mark" style="background:var(--amber)">✓</span>
+            <span class="pop-sel-ico">🧒</span>
+            <div class="pop-sel-name">NNAJ</div>
+            <div class="pop-sel-desc">Niños, Niñas, Adolescentes y Jóvenes en situación de riesgo o vulnerabilidad</div>
+          </div>
+          <div class="pop-sel ps-vdg" onclick="togglePop(this,'pop-vdg')">
+            <input type="checkbox" id="pop-vdg">
+            <span class="check-mark" style="background:var(--violeta)">✓</span>
+            <span class="pop-sel-ico">⚖️</span>
+            <div class="pop-sel-name">VBG — Violencia Basada en Género</div>
+            <div class="pop-sel-desc">Víctimas de violencia física, psicológica, sexual, económica o simbólica por razón de género</div>
+          </div>
+          <div class="pop-sel ps-vif" onclick="togglePop(this,'pop-vif')">
+            <input type="checkbox" id="pop-vif">
+            <span class="check-mark" style="background:var(--verde)">✓</span>
+            <span class="pop-sel-ico">🏠</span>
+            <div class="pop-sel-name">VIF — Violencia Intrafamiliar</div>
+            <div class="pop-sel-desc">Víctimas de violencia al interior del núcleo familiar, incluidos menores y adultos mayores</div>
+          </div>
+        </div>
+        <div class="pop-sel ps-lgbtiq" style="margin-top:10px;" onclick="togglePop(this,'pop-lgbtiq')">
+          <input type="checkbox" id="pop-lgbtiq">
+          <span class="check-mark" style="background:var(--lila)">✓</span>
+          <span class="pop-sel-ico">🏳️‍🌈</span>
+          <div class="pop-sel-name">Comunidad LGBTIQ+</div>
+          <div class="pop-sel-desc">Personas en situación de vulnerabilidad, discriminación o riesgo de violencia por orientación sexual e identidad de género</div>
+        </div>
+        <div class="val-msg" id="val-poblacion" style="margin-top:8px;">Seleccione al menos una población para continuar.</div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">📊 Estimación de Personas Afectadas</div>
+      <div class="field">
+        <label>Número estimado de personas afectadas por las problemáticas identificadas en el territorio</label>
+        <input type="number" id="num-afectados" min="0" max="9999" placeholder="Número estimado" style="max-width:200px;">
+      </div>
+
+      <div class="field">
+        <label>Rango de edad predominante en las poblaciones afectadas <span class="hint">(seleccione todos los que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rosa"><input type="checkbox"> 0–11 años — Infancia</label>
+          <label class="chip c-amber"><input type="checkbox"> 12–17 años — Adolescencia</label>
+          <label class="chip c-viol"><input type="checkbox"> 18–28 años — Juventud</label>
+          <label class="chip c-teal"><input type="checkbox"> 29–59 años — Adultez</label>
+          <label class="chip c-verde"><input type="checkbox"> 60+ años — Adulto mayor</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿La problemática afecta de manera diferenciada a algún grupo específico dentro del territorio?</label>
+        <div class="chips">
+          <label class="chip c-rosa"><input type="checkbox"> Mujeres jefas de hogar</label>
+          <label class="chip c-amber"><input type="checkbox"> NNA vinculados a contextos de violencia</label>
+          <label class="chip c-viol"><input type="checkbox"> Personas con discapacidad</label>
+          <label class="chip c-teal"><input type="checkbox"> Población migrante</label>
+          <label class="chip c-verde"><input type="checkbox"> Adultos mayores solos</label>
+          <label class="chip c-rojo"><input type="checkbox"> Personas en situación de desplazamiento</label>
+          <label class="chip c-rosa"><input type="checkbox"> Mujeres embarazadas o en periodo de lactancia</label>
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(1)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(1)">Siguiente — Problemáticas Territoriales →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 3 — PROBLEMÁTICAS TERRITORIALES
+  ══════════════════════════════ -->
+  <div class="section" id="sec-2">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-viol">⚠️</div>
+        <div>
+          <div class="card-sec-label">Sección 3 de 6</div>
+          <div class="card-title">Problemáticas Territoriales Identificadas</div>
+        </div>
+      </div>
+
+      <div class="info-box rosa">
+        <span class="ico">🔍</span>
+        <p>Registre las problemáticas concretas que afectan a cada población en este territorio. Sea específico: el nivel de detalle de esta sección determina la calidad de las acciones que el OSCC podrá activar.</p>
+      </div>
+
+      <!-- Tipos de violencia / problemática -->
+      <div class="field">
+        <label>Tipos de violencia o problemáticas identificadas en el territorio <span class="req">*</span> <span class="hint">(seleccione todos los que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 🥊 Violencia física</label>
+          <label class="chip c-viol"><input type="checkbox"> 🧠 Violencia psicológica / emocional</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🚫 Violencia sexual</label>
+          <label class="chip c-amber"><input type="checkbox"> 💰 Violencia económica / patrimonial</label>
+          <label class="chip c-rosa"><input type="checkbox"> ⚡ Violencia simbólica / discriminación</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🏠 Violencia intrafamiliar</label>
+          <label class="chip c-amber"><input type="checkbox"> 🧒 Maltrato infantil</label>
+          <label class="chip c-viol"><input type="checkbox"> 📱 Acoso / Ciberacoso</label>
+          <label class="chip c-rosa"><input type="checkbox"> 💔 Feminicidio (riesgo inminente)</label>
+          <label class="chip c-verde"><input type="checkbox"> 👴 Violencia contra adulto mayor</label>
+          <label class="chip c-teal"><input type="checkbox"> 🏳️‍🌈 Violencia basada en orientación sexual</label>
+          <label class="chip c-amber"><input type="checkbox"> ⚠️ Riesgo de reclutamiento ilícito (NNA)</label>
+        </div>
+        <div class="val-msg" id="val-problematicas">Seleccione al menos una problemática.</div>
+      </div>
+
+      <hr class="field-sep">
+
+      <!-- Por población -->
+      <div class="sub-hdr">👩 Problemática específica — Mujeres / VBG</div>
+      <div class="field">
+        <label>Descripción de la situación que afecta a mujeres y víctimas de VBG en el territorio</label>
+        <textarea id="prob-mujeres" placeholder="Describa: tipo de violencia más frecuente, zonas donde ocurre, horarios, factores que la generan, barreras que enfrentan las víctimas para denunciar o acceder a servicios..." maxlength="700"></textarea>
+        <div class="char-counter" id="cc-mujeres">0 / 700</div>
+      </div>
+      <div class="field">
+        <label>Nivel de gravedad percibido — Mujeres / VBG</label>
+        <div class="nivel-opts">
+          <label class="nivel-opt alto"><input type="radio" name="niv-mujeres" value="alto"> 🔴 ALTO<br><small>Riesgo inminente / Casos activos graves</small></label>
+          <label class="nivel-opt medio"><input type="radio" name="niv-mujeres" value="medio"> 🟡 MEDIO<br><small>Situación preocupante con casos recientes</small></label>
+          <label class="nivel-opt bajo"><input type="radio" name="niv-mujeres" value="bajo"> 🟢 BAJO<br><small>Situación controlada o en monitoreo</small></label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🧒 Problemática específica — NNAJ</div>
+      <div class="field">
+        <label>Descripción de la situación que afecta a Niños, Niñas, Adolescentes y Jóvenes en el territorio</label>
+        <textarea id="prob-nnaj" placeholder="Describa: riesgo de reclutamiento, maltrato, exposición a violencia intrafamiliar, deserción escolar, explotación, situación en el espacio público..." maxlength="700"></textarea>
+        <div class="char-counter" id="cc-nnaj">0 / 700</div>
+      </div>
+      <div class="field">
+        <label>Nivel de gravedad percibido — NNAJ</label>
+        <div class="nivel-opts">
+          <label class="nivel-opt alto"><input type="radio" name="niv-nnaj" value="alto"> 🔴 ALTO</label>
+          <label class="nivel-opt medio"><input type="radio" name="niv-nnaj" value="medio"> 🟡 MEDIO</label>
+          <label class="nivel-opt bajo"><input type="radio" name="niv-nnaj" value="bajo"> 🟢 BAJO</label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🏠 Problemática específica — VIF</div>
+      <div class="field">
+        <label>Descripción de la situación de violencia intrafamiliar en el territorio</label>
+        <textarea id="prob-vif" placeholder="Describa: frecuencia de incidentes, tipos de violencia, miembros del hogar más afectados, factores desencadenantes (alcohol, SPA, desempleo), barreras para la denuncia..." maxlength="700"></textarea>
+        <div class="char-counter" id="cc-vif">0 / 700</div>
+      </div>
+      <div class="field">
+        <label>Nivel de gravedad percibido — VIF</label>
+        <div class="nivel-opts">
+          <label class="nivel-opt alto"><input type="radio" name="niv-vif" value="alto"> 🔴 ALTO</label>
+          <label class="nivel-opt medio"><input type="radio" name="niv-vif" value="medio"> 🟡 MEDIO</label>
+          <label class="nivel-opt bajo"><input type="radio" name="niv-vif" value="bajo"> 🟢 BAJO</label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🗺️ Lugares y Horarios de Mayor Ocurrencia</div>
+      <div class="field">
+        <label>¿Dónde ocurren principalmente las problemáticas? <span class="hint">(seleccione todos los que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 🏠 En el hogar / vivienda</label>
+          <label class="chip c-amber"><input type="checkbox"> 🌳 Espacio público</label>
+          <label class="chip c-viol"><input type="checkbox"> 🏫 Entorno escolar</label>
+          <label class="chip c-teal"><input type="checkbox"> 🚌 Transporte público</label>
+          <label class="chip c-rosa"><input type="checkbox"> 💼 Lugar de trabajo</label>
+          <label class="chip c-verde"><input type="checkbox"> 🏥 Entorno de salud</label>
+          <label class="chip c-amber"><input type="checkbox"> 🍺 Establecimientos de consumo de alcohol</label>
+          <label class="chip c-rojo"><input type="checkbox"> 📍 Toda la zona del sector</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Horario de mayor ocurrencia de las problemáticas</label>
+        <div class="opts horizontal">
+          <label class="opt-item"><input type="radio" name="horario"> Mañana (6 am – 12 m)</label>
+          <label class="opt-item"><input type="radio" name="horario"> Tarde (12 m – 6 pm)</label>
+          <label class="opt-item"><input type="radio" name="horario"> Noche (6 pm – 12 am)</label>
+          <label class="opt-item"><input type="radio" name="horario"> Madrugada (12 am – 6 am)</label>
+          <label class="opt-item"><input type="radio" name="horario"> Sin patrón definido</label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">⚡ Factores de Riesgo Identificados</div>
+      <div class="field">
+        <label>¿Cuáles factores de riesgo están presentes en el territorio? <span class="hint">(seleccione todos los que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 🍺 Consumo de alcohol y SPA en el entorno</label>
+          <label class="chip c-amber"><input type="checkbox"> 💸 Desempleo / Precariedad económica</label>
+          <label class="chip c-viol"><input type="checkbox"> 🏚️ Hacinamiento habitacional</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🔫 Presencia de actores armados o grupos ilegales</label>
+          <label class="chip c-rosa"><input type="checkbox"> 📚 Bajo nivel educativo o deserción escolar</label>
+          <label class="chip c-teal"><input type="checkbox"> 🏛️ Débil presencia institucional en la zona</label>
+          <label class="chip c-amber"><input type="checkbox"> 🤐 Normas culturales que naturalizan la violencia</label>
+          <label class="chip c-verde"><input type="checkbox"> 💔 Ruptura de redes de apoyo familiar o comunitario</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🌙 Ausencia de iluminación / espacios inseguros</label>
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(2)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(2)">Siguiente — Redes y Servicios →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 4 — REDES Y SERVICIOS INSTITUCIONALES
+  ══════════════════════════════ -->
+  <div class="section" id="sec-3">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-teal">🏛️</div>
+        <div>
+          <div class="card-sec-label">Sección 4 de 6</div>
+          <div class="card-title">Redes de Apoyo y Servicios Institucionales</div>
+        </div>
+      </div>
+
+      <div class="info-box verde">
+        <span class="ico">🤝</span>
+        <p>Registre qué servicios institucionales y redes de apoyo comunitario existen en el territorio, cuáles conocen y usan las poblaciones afectadas, y qué vacíos se identifican.</p>
+      </div>
+
+      <div class="sub-hdr">🏛️ Presencia Institucional en el Territorio</div>
+      <div class="field">
+        <label>¿Con qué entidades de atención cuenta el territorio o área de influencia? <span class="hint">(seleccione todas las presentes)</span></label>
+        <div class="chips">
+          <label class="chip c-rosa"><input type="checkbox"> 👩‍⚖️ Comisaría de Familia</label>
+          <label class="chip c-viol"><input type="checkbox"> 🧡 ICBF</label>
+          <label class="chip c-teal"><input type="checkbox"> ⚖️ Fiscalía General de la Nación</label>
+          <label class="chip c-verde"><input type="checkbox"> 🏥 Centro / Puesto de Salud</label>
+          <label class="chip c-amber"><input type="checkbox"> 🏠 Casa de Justicia</label>
+          <label class="chip c-rosa"><input type="checkbox"> 👩 Secretaría de la Mujer / Casa de la Mujer</label>
+          <label class="chip c-rojo"><input type="checkbox"> 📋 Defensoría del Pueblo</label>
+          <label class="chip c-teal"><input type="checkbox"> 🚔 Policía Nacional / CAI</label>
+          <label class="chip c-verde"><input type="checkbox"> 🏛️ Alcaldía Local</label>
+          <label class="chip c-amber"><input type="checkbox"> 📖 Institución educativa</label>
+          <label class="chip c-viol"><input type="checkbox"> 🤝 Organización de mujeres</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Las poblaciones afectadas conocen y acceden a estos servicios? <span class="req">*</span></label>
+        <div class="opts">
+          <label class="opt-item"><input type="radio" name="acceso-servicios"> Sí — conocen y acceden con relativa facilidad</label>
+          <label class="opt-item"><input type="radio" name="acceso-servicios"> Parcialmente — conocen algunos servicios pero no todos</label>
+          <label class="opt-item"><input type="radio" name="acceso-servicios"> Poco — conocen los servicios pero tienen barreras de acceso</label>
+          <label class="opt-item"><input type="radio" name="acceso-servicios"> No — no conocen los servicios disponibles o no los usan</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Principales barreras para acceder a los servicios institucionales <span class="hint">(seleccione todas las que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 😨 Miedo a represalias del agresor</label>
+          <label class="chip c-amber"><input type="checkbox"> 📍 Distancia física a los servicios</label>
+          <label class="chip c-viol"><input type="checkbox"> 🤷 Desconocimiento de la ruta de atención</label>
+          <label class="chip c-rosa"><input type="checkbox"> 💔 Vergüenza o estigma social</label>
+          <label class="chip c-teal"><input type="checkbox"> 💰 Falta de recursos económicos (transporte)</label>
+          <label class="chip c-verde"><input type="checkbox"> 👶 Responsabilidades de cuidado (hijos, adultos mayores)</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🚫 Desconfianza en las instituciones</label>
+          <label class="chip c-amber"><input type="checkbox"> ⏰ Horarios de atención inadecuados</label>
+          <label class="chip c-viol"><input type="checkbox"> 📱 Falta de comunicación / información sobre servicios</label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🌱 Redes Comunitarias de Apoyo</div>
+      <div class="field">
+        <label>¿Existen redes comunitarias de apoyo para las poblaciones afectadas? <span class="req">*</span></label>
+        <div class="opts horizontal">
+          <label class="opt-item"><input type="radio" name="redes-com"> Sí — activas y visibles</label>
+          <label class="opt-item"><input type="radio" name="redes-com"> Sí — pero débiles o desarticuladas</label>
+          <label class="opt-item"><input type="radio" name="redes-com"> No — no se identifican</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>¿Qué organizaciones comunitarias están presentes y activas en el territorio? <span class="hint">(seleccione todas las que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rosa"><input type="checkbox"> 🏛️ Junta de Acción Comunal (JAC)</label>
+          <label class="chip c-viol"><input type="checkbox"> 👩 Organización de mujeres</label>
+          <label class="chip c-teal"><input type="checkbox"> 🧒 Grupo juvenil / organización de jóvenes</label>
+          <label class="chip c-amber"><input type="checkbox"> ⛪ Comunidad religiosa</label>
+          <label class="chip c-verde"><input type="checkbox"> 🏪 Agremiación de comerciantes</label>
+          <label class="chip c-rosa"><input type="checkbox"> 💊 Grupo de apoyo a víctimas</label>
+          <label class="chip c-teal"><input type="checkbox"> 📚 Grupo educativo o cultural</label>
+        </div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🔍 Vacíos y Brechas Institucionales</div>
+      <div class="field">
+        <label>¿Qué servicios o respuestas institucionales NO existen o son insuficientes en el territorio?</label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 🚔 Falta de patrullaje nocturno / presencia policial</label>
+          <label class="chip c-amber"><input type="checkbox"> 👩‍⚖️ Sin Comisaría de Familia cercana</label>
+          <label class="chip c-viol"><input type="checkbox"> 🧠 Sin atención psicosocial a víctimas</label>
+          <label class="chip c-rosa"><input type="checkbox"> 👩 Sin Casa de la Mujer o servicio similar</label>
+          <label class="chip c-teal"><input type="checkbox"> 🧡 Sin presencia activa del ICBF</label>
+          <label class="chip c-verde"><input type="checkbox"> 🏥 Sin atención médica cercana para urgencias</label>
+          <label class="chip c-amber"><input type="checkbox"> ⚖️ Sin acceso efectivo a la justicia</label>
+          <label class="chip c-rojo"><input type="checkbox"> 👶 Sin programas para NNA en riesgo</label>
+          <label class="chip c-viol"><input type="checkbox"> 📢 Sin espacios de denuncia seguros y confidenciales</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Describa los vacíos institucionales más críticos identificados en este territorio</label>
+        <textarea id="vacios-inst" placeholder="Describa qué no funciona, qué falta o qué no llega a este territorio para proteger adecuadamente a las poblaciones vulnerables..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-vacios">0 / 600</div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(3)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(3)">Siguiente — Voces y Alertas →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 5 — VOCES COMUNITARIAS Y ALERTAS
+  ══════════════════════════════ -->
+  <div class="section" id="sec-4">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-amber">🗣️</div>
+        <div>
+          <div class="card-sec-label">Sección 5 de 6</div>
+          <div class="card-title">Voces Comunitarias, Casos Activos y Alertas Tempranas</div>
+        </div>
+      </div>
+
+      <div class="info-box verde">
+        <span class="ico">💬</span>
+        <p>Esta sección captura la perspectiva directa de la comunidad, los casos activos que requieren seguimiento y las alertas tempranas que deben activarse. Es la sección de mayor sensibilidad — toda la información debe manejarse con la debida confidencialidad.</p>
+      </div>
+
+      <div class="sub-hdr">📣 Voz Comunitaria</div>
+      <div class="field">
+        <label>¿Cuál es la percepción de la comunidad sobre la situación de seguridad para las mujeres y poblaciones vulnerables en el sector? <span class="req">*</span></label>
+        <div class="opts">
+          <label class="opt-item"><input type="radio" name="perc-com"> Muy inseguro — la violencia es percibida como cotidiana y normalizada</label>
+          <label class="opt-item"><input type="radio" name="perc-com"> Inseguro — hay hechos frecuentes pero no son cotidianos</label>
+          <label class="opt-item"><input type="radio" name="perc-com"> Regular — situación preocupante pero con algunos avances percibidos</label>
+          <label class="opt-item"><input type="radio" name="perc-com"> Relativamente seguro — las problemáticas son puntuales o de baja frecuencia</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Propuesta de la comunidad para proteger a las poblaciones vulnerables <span class="hint">(máx. 700 caracteres)</span></label>
+        <textarea id="propuesta-com" placeholder="¿Qué propone la comunidad? Incluya las palabras exactas de líderes, mujeres o representantes del sector cuando sea posible..." maxlength="700"></textarea>
+        <div class="char-counter" id="cc-propuesta">0 / 700</div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🚨 Casos Activos y Situaciones de Riesgo</div>
+      <div class="info-box rojo">
+        <span class="ico">🔒</span>
+        <p><strong>Confidencialidad estricta:</strong> No registre nombres, apellidos, números de documento ni datos que permitan identificar a víctimas individuales. Esta información es de manejo institucional exclusivo del OSCC y las entidades autorizadas.</p>
+      </div>
+
+      <div class="field">
+        <label>¿Se identificaron casos activos que requieren atención institucional urgente? <span class="req">*</span></label>
+        <div class="opts horizontal">
+          <label class="opt-item"><input type="radio" name="hay-casos"> Sí — hay casos que requieren activación inmediata</label>
+          <label class="opt-item"><input type="radio" name="hay-casos"> Posiblemente — hay situaciones que deben verificarse</label>
+          <label class="opt-item"><input type="radio" name="hay-casos"> No — no se identificaron casos activos urgentes</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Número estimado de casos activos identificados (sin datos personales)</label>
+        <input type="number" id="num-casos" min="0" max="999" placeholder="Ej: 3" style="max-width:140px;">
+      </div>
+
+      <div class="field">
+        <label>Tipo de caso más frecuente (sin nombres ni datos personales)</label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> VIF activa con víctima en el hogar</label>
+          <label class="chip c-rosa"><input type="checkbox"> Mujer con riesgo de feminicidio</label>
+          <label class="chip c-amber"><input type="checkbox"> NNA en situación de maltrato</label>
+          <label class="chip c-viol"><input type="checkbox"> Víctima de violencia sexual sin atención</label>
+          <label class="chip c-teal"><input type="checkbox"> Víctima con medida de protección incumplida</label>
+          <label class="chip c-verde"><input type="checkbox"> Adulto mayor sin red de apoyo</label>
+          <label class="chip c-rojo"><input type="checkbox"> NNA en riesgo de reclutamiento</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Descripción general de los casos activos <span class="hint">(sin datos personales — describa patrones, no personas)</span></label>
+        <textarea id="desc-casos" placeholder="Describa el tipo de situación, la frecuencia, el patrón general y la urgencia de atención. Nunca incluya nombre, dirección, número de documento ni ningún dato que identifique a la víctima..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-casos">0 / 600</div>
+      </div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">⚡ Alertas Tempranas</div>
+      <div class="field">
+        <label>¿Hay señales de riesgo inminente que requieran activación inmediata? <span class="hint">(seleccione todas las que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-rojo"><input type="checkbox"> 💔 Riesgo de feminicidio — escalada de violencia grave</label>
+          <label class="chip c-rojo"><input type="checkbox"> 🧒 NNA en peligro inmediato</label>
+          <label class="chip c-amber"><input type="checkbox"> ⚠️ Víctima con agresor en el mismo hogar sin medida de protección</label>
+          <label class="chip c-viol"><input type="checkbox"> 🚫 Incumplimiento de medida de protección activa</label>
+          <label class="chip c-rosa"><input type="checkbox"> 📢 Víctima que ha denunciado pero no recibe atención</label>
+          <label class="chip c-teal"><input type="checkbox"> 🏃 Víctima que necesita ser reubicada urgentemente</label>
+          <label class="chip c-verde"><input type="checkbox"> 💊 Víctima que necesita atención médica o psicológica urgente</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Se identificaron eventos próximos que puedan generar mayor riesgo para las poblaciones vulnerables?</label>
+        <input type="text" id="eventos-riesgo" placeholder="Ej: festividades locales con alto consumo de alcohol, conflicto familiar identificado en proceso de escalada...">
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(4)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(4)">Siguiente — Cierre y Envío →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SEC 6 — CIERRE Y ENVÍO
+  ══════════════════════════════ -->
+  <div class="section" id="sec-5">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-verde">✅</div>
+        <div>
+          <div class="card-sec-label">Sección 6 de 6</div>
+          <div class="card-title">Cierre, Fotografías y Envío</div>
+        </div>
+      </div>
+
+      <div class="sub-hdr">📸 Registro Fotográfico</div>
+      <div class="info-box rosa">
+        <span class="ico">📷</span>
+        <p>Adjunte fotografías del espacio o contexto donde se realizó el levantamiento. <strong>Nunca fotografíe a personas sin su consentimiento explícito.</strong> Las fotos son del contexto territorial, no de las personas.</p>
+      </div>
+      <div class="photo-zone" onclick="document.getElementById('file-input').click()">
+        <div class="photo-zone-ico">📸</div>
+        <p><strong>Toque aquí para adjuntar fotografías del contexto territorial</strong><br>Formatos: JPG, PNG · Máximo 6 fotos · Sin personas identificables</p>
+        <input type="file" id="file-input" accept="image/*" multiple onchange="previsualizarFotos(event)" style="display:none;">
+      </div>
+      <div class="photo-preview" id="photo-preview"></div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">📝 Síntesis y Conclusión</div>
+
+      <div class="field">
+        <label>Hora de finalización <span class="req">*</span></label>
+        <input type="time" id="hora-fin" required style="max-width:200px;">
+      </div>
+
+      <div class="field">
+        <label>Conclusión general del levantamiento <span class="req">*</span> <span class="hint">(máx. 900 caracteres — resuma los hallazgos más críticos)</span></label>
+        <textarea id="conclusion" placeholder="Resuma: poblaciones más afectadas, problemáticas más urgentes, vacíos institucionales críticos y acciones prioritarias que recomienda activar de inmediato..." maxlength="900" required></textarea>
+        <div class="char-counter" id="cc-conclusion">0 / 900</div>
+        <div class="val-msg" id="val-conclusion">La conclusión del levantamiento es obligatoria.</div>
+      </div>
+
+      <div class="sub-hdr">🚀 Acciones Interinstitucionales Recomendadas</div>
+      <div class="field">
+        <label>Seleccione todas las acciones que deben activarse tras este levantamiento</label>
+        <div class="opts">
+          <label class="opt-item"><input type="checkbox"> Alerta urgente a Comisaría de Familia — casos activos de VIF / VBG</label>
+          <label class="opt-item"><input type="checkbox"> Activación de ruta de atención para víctimas identificadas (sin datos personales en el formulario)</label>
+          <label class="opt-item"><input type="checkbox"> Notificación al ICBF por NNA en situación de riesgo</label>
+          <label class="opt-item"><input type="checkbox"> Reporte a la Fiscalía General de la Nación por casos con carácter penal</label>
+          <label class="opt-item"><input type="checkbox"> Coordinación con Secretaría de la Mujer para campañas o atención especializada</label>
+          <label class="opt-item"><input type="checkbox"> Inclusión en la próxima mesa interinstitucional del Programa P3</label>
+          <label class="opt-item"><input type="checkbox"> Solicitud de refuerzo de patrullaje a Policía Nacional en el sector</label>
+          <label class="opt-item"><input type="checkbox"> Activación de atención psicosocial urgente — Secretaría de Salud</label>
+          <label class="opt-item"><input type="checkbox"> Sin acción inmediata requerida — seguimiento en próximo ciclo</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Este sector debe incluirse en el próximo recorrido de seguimiento? <span class="req">*</span></label>
+        <div class="opts horizontal">
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — seguimiento urgente (< 2 semanas)</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — próximo ciclo mensual</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — próximo ciclo trimestral</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> No requiere seguimiento prioritario</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Firma del responsable (nombre completo)</label>
+        <input type="text" id="firma" placeholder="Escriba su nombre completo como firma del levantamiento">
+      </div>
+
+      <div class="info-box verde" style="margin-top:20px;">
+        <span class="ico">🔄</span>
+        <p>Al enviar esta ficha, la información será dirigida al <strong>Centro de Control de Información Territorial del OSCC</strong> para activar los protocolos de respuesta del Programa P3. Las alertas urgentes generarán notificación en las siguientes <strong>24–48 horas</strong>. Toda la información es de carácter estrictamente confidencial.</p>
+      </div>
+
+      <div class="nav-btns">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-prev" onclick="anterior(5)">← Anterior</button>
+          <button class="btn btn-draft btn" onclick="guardarBorrador()">💾 Guardar borrador</button>
+        </div>
+        <button class="btn btn-submit" onclick="enviarFicha()">🛡️ Enviar Ficha P3</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="success">
+    <div class="success-ico">🛡️</div>
+    <h2>¡Ficha P3 registrada!</h2>
+    <p>La ficha de levantamiento ha sido enviada exitosamente al Centro de Control de Información Territorial del OSCC. El equipo del Programa P3 revisará la información en las próximas horas y activará los protocolos de respuesta correspondientes.</p>
+    <div class="success-code" id="success-code">P3-XXX-0001</div>
+    <p style="margin-bottom:20px;font-size:.85em;color:var(--ink3);">Guarde este código como referencia del levantamiento. Toda la información es confidencial y de manejo institucional exclusivo.</p>
+    <button class="btn-new-form" onclick="nuevaFicha()">+ Nueva ficha</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir registro</button>
+  </div>
+
+</div><!-- /wrapper -->
+
+<script>
+let currentSection = 0;
+const totalSections = 6;
+let fotosAdjuntas = 0;
+
+function updateProgress(sec) {
+  const pct = Math.round((sec / totalSections) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('pct').textContent = pct + '%';
+  document.querySelectorAll('.ps').forEach((el, i) => {
+    el.classList.remove('active','done');
+    if (i === sec) el.classList.add('active');
+    else if (i < sec) el.classList.add('done');
+  });
+}
+function goTo(sec) {
+  document.getElementById('sec-' + currentSection).classList.remove('visible');
+  currentSection = sec;
+  document.getElementById('sec-' + currentSection).classList.add('visible');
+  updateProgress(sec);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function siguiente(sec) { if (!validar(sec)) return; goTo(sec + 1); }
+function anterior(sec)  { goTo(sec - 1); }
+
+function validar(sec) {
+  let ok = true;
+  if (sec === 0) {
+    ['fecha','localidad','barrio','resp-nombre'].forEach(id => {
+      const el = document.getElementById(id);
+      const vId = 'val-' + (id === 'resp-nombre' ? 'resp' : id);
+      const v = document.getElementById(vId);
+      if (!el.value.trim()) { el.classList.add('error'); if (v) v.classList.add('visible'); ok = false; }
+      else { el.classList.remove('error'); if (v) v.classList.remove('visible'); }
+    });
+  }
+  if (sec === 1) {
+    const anyPop = document.querySelectorAll('.pop-sel.sel').length > 0;
+    const v = document.getElementById('val-poblacion');
+    if (!anyPop) { v.classList.add('visible'); ok = false; }
+    else v.classList.remove('visible');
+  }
+  if (sec === 2) {
+    const anyProb = document.querySelectorAll('#sec-2 .chip.sel').length > 0;
+    const v = document.getElementById('val-problematicas');
+    if (!anyProb) { v.classList.add('visible'); ok = false; }
+    else v.classList.remove('visible');
+  }
+  if (sec === 5) {
+    const conc = document.getElementById('conclusion');
+    const v = document.getElementById('val-conclusion');
+    if (!conc.value.trim()) { conc.classList.add('error'); v.classList.add('visible'); ok = false; }
+    else { conc.classList.remove('error'); v.classList.remove('visible'); }
+  }
+  return ok;
+}
+
+function togglePop(el, cbId) {
+  el.classList.toggle('sel');
+  document.getElementById(cbId).checked = el.classList.contains('sel');
+}
+
+function generarCodigo() {
+  const loc = document.getElementById('localidad').value;
+  const fecha = document.getElementById('fecha').value;
+  if (loc && fecha) {
+    const f = fecha.replace(/-/g,'');
+    const n = String(Math.floor(Math.random()*900)+100);
+    document.getElementById('codigo').value = 'P3-' + loc + '-' + f + '-' + n;
+  }
+}
+document.getElementById('fecha').addEventListener('change', generarCodigo);
+
+function capturarGPS() {
+  const btn = document.getElementById('btn-gps');
+  const st = document.getElementById('gps-status');
+  btn.textContent = '⏳ Obteniendo...';
+  st.className = 'gps-status';
+  if (!navigator.geolocation) { st.className='gps-status err'; st.textContent='⚠ GPS no disponible en este dispositivo.'; btn.textContent='📡 Capturar GPS'; return; }
+  navigator.geolocation.getCurrentPosition(pos => {
+    document.getElementById('lat').value = pos.coords.latitude.toFixed(6);
+    document.getElementById('lng').value = pos.coords.longitude.toFixed(6);
+    btn.innerHTML = '✅ GPS Capturado';
+    st.className = 'gps-status ok';
+    st.textContent = '✓ Coordenadas capturadas — Precisión: ' + Math.round(pos.coords.accuracy) + ' m';
+  }, () => {
+    btn.textContent = '📡 Reintentar GPS';
+    st.className = 'gps-status err';
+    st.textContent = '⚠ No se pudo obtener la ubicación. Active el GPS e intente nuevamente.';
+  }, {enableHighAccuracy:true,timeout:12000});
+}
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', function() {
+    this.classList.toggle('sel');
+    const cb = this.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = !cb.checked;
+  });
+});
+
+document.querySelectorAll('.opt-item input[type="radio"]').forEach(r => {
+  r.addEventListener('change', function() {
+    document.querySelectorAll('input[name="' + this.name + '"]').forEach(x => x.closest('.opt-item').classList.remove('selected'));
+    this.closest('.opt-item').classList.add('selected');
+  });
+});
+
+document.querySelectorAll('.nivel-opt').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const name = this.querySelector('input').name;
+    document.querySelectorAll('input[name="' + name + '"]').forEach(x => x.closest('.nivel-opt').classList.remove('sel'));
+    this.classList.add('sel'); this.querySelector('input').checked = true;
+  });
+});
+
+function setupCC(id, ccId, max) {
+  const ta = document.getElementById(id), ct = document.getElementById(ccId);
+  if (!ta||!ct) return;
+  ta.addEventListener('input', function() {
+    const l = this.value.length;
+    ct.textContent = l + ' / ' + max;
+    ct.className = 'char-counter' + (l > max*.9?' warn':'') + (l >= max?' over':'');
+  });
+}
+setupCC('prob-mujeres','cc-mujeres',700);
+setupCC('prob-nnaj','cc-nnaj',700);
+setupCC('prob-vif','cc-vif',700);
+setupCC('vacios-inst','cc-vacios',600);
+setupCC('propuesta-com','cc-propuesta',700);
+setupCC('desc-casos','cc-casos',600);
+setupCC('conclusion','cc-conclusion',900);
+
+function previsualizarFotos(event) {
+  const preview = document.getElementById('photo-preview');
+  preview.innerHTML = '';
+  fotosAdjuntas = event.target.files.length;
+  Array.from(event.target.files).slice(0,6).forEach(file => {
+    const r = new FileReader();
+    r.onload = e => { const img = document.createElement('img'); img.src = e.target.result; img.className='photo-thumb'; preview.appendChild(img); };
+    r.readAsDataURL(file);
+  });
+}
+
+function guardarBorrador() {
+  try {
+    sessionStorage.setItem('p3_borrador', JSON.stringify({
+      codigo: document.getElementById('codigo').value,
+      fecha: document.getElementById('fecha').value,
+      localidad: document.getElementById('localidad').value,
+      barrio: document.getElementById('barrio').value,
+      responsable: document.getElementById('resp-nombre').value,
+      timestamp: new Date().toISOString()
+    }));
+    alert('✅ Borrador guardado. Puede continuar diligenciando más tarde.');
+  } catch(e) { alert('No fue posible guardar el borrador en este dispositivo.'); }
+}
+
+function enviarFicha() {
+  if (!validar(5)) return;
+  const codigo = document.getElementById('codigo').value || 'P3-SIN-CODIGO';
+  document.getElementById('success-code').textContent = codigo;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.getElementById('success').classList.add('visible');
+  document.getElementById('prog-fill').style.width = '100%';
+  document.getElementById('pct').textContent = '100%';
+  document.querySelectorAll('.ps').forEach(s => s.classList.add('done'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function nuevaFicha() {
+  document.getElementById('success').classList.remove('visible');
+  document.getElementById('sec-0').classList.add('visible');
+  currentSection = 0; updateProgress(0);
+  document.querySelectorAll('form').forEach(f => f.reset());
+  document.getElementById('photo-preview').innerHTML = '';
+  fotosAdjuntas = 0;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+updateProgress(0);
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('fecha').value = today;
+generarCodigo();
+</script>
+</body>
+</html>
